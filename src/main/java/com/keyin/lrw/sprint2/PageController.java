@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Controller
@@ -24,8 +22,8 @@ public class PageController {
 
     @PostMapping("tree")
     public Tree addTree(@RequestBody String values) {
-        // A plain string is given to the API, parse it into a list of integers using Witchcraft
-        List<Integer> parsedValues = Arrays.stream(values.split(", *"))
+        // A plain string is given to the server, parse it into a list of integers
+        List<Integer> parsedValues = Arrays.stream(values.trim().split(", *"))
                 .map(Integer::parseInt).collect(Collectors.toList());
 
         return treeService.createTreeFromValues(parsedValues);

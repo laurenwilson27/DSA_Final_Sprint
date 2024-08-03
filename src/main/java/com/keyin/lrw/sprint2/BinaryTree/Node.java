@@ -9,12 +9,12 @@ public class Node {
     @GeneratedValue(generator = "node_sequence")
     private long id;
 
+    private final int value;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Node left;
     @OneToOne(cascade = CascadeType.ALL)
     private Node right;
-
-    private final int value;
 
     public Node(int value) {
         this.value = value;
@@ -22,11 +22,12 @@ public class Node {
         this.right = null;
     }
 
+    public long getId() { return id; }
+    public int getValue() { return value; }
+
     public Node getLeft() { return left; }
     public Node getRight() { return right; }
 
     public void setLeft(Node node) { left = node; }
     public void setRight(Node node) { right = node; }
-
-    public int getValue() { return value; }
 }

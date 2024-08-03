@@ -19,6 +19,9 @@ public class Tree {
         this.root = null;
     }
 
+    public long getId() { return id; }
+    public Node getRoot() { return root; }
+
     public void insert(int value) {
         root = insertRecursion(root, value);
     }
