@@ -22,7 +22,6 @@ public class Node {
         this.right = null;
     }
 
-    public long getId() { return id; }
     public int getValue() { return value; }
 
     public Node getLeft() { return left; }
