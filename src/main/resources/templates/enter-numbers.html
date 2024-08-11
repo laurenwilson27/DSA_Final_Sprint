@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Enter Numbers</title>
+</head>
+<body>
+    <form th:action="@{/process-numbers}" method="post" th:object="${form}">
+        <label for="valueInput">Values for Binary Tree: </label>
+        <input id="valueInput" type="text" th:field="*{values}" />
+        <input type="submit" />
+    </form>
+</body>
+</html>
