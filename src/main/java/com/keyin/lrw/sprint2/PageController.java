@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.keyin.lrw.sprint2.BinaryTree.Tree;
 import com.keyin.lrw.sprint2.forms.EnterNumbersForm;
+import com.keyin.lrw.sprint2.gson.BinaryTreeExclusionStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +21,11 @@ public class PageController {
     TreeService treeService;
 
     // Use Gson to convert objects into pretty-printed JSON strings
-    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    // keys with null values are ignored (gson default) and an exclusion strategy is used to omit Node ids
+    Gson gson = new GsonBuilder()
+            .setExclusionStrategies(new BinaryTreeExclusionStrategy())
+            .setPrettyPrinting()
+            .create();
 
     @GetMapping("/")
     public String index() {
@@ -45,6 +50,7 @@ public class PageController {
         String json = gson.toJson(newTree);
 
         model.addAttribute("json", json);
+        model.addAttribute("treeId", newTree.getId());
 
         return "process-numbers";
     }
