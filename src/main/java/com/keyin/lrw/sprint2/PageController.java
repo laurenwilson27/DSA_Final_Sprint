@@ -21,7 +21,7 @@ public class PageController {
     TreeService treeService;
 
     // Use Gson to convert objects into pretty-printed JSON strings
-    // keys with null values are ignored (gson default) and an exclusion strategy is used to omit Node ids
+    // keys with null values are ignored (gson default) and an exclusion strategy is used to omit Tree/Node ids
     Gson gson = new GsonBuilder()
             .setExclusionStrategies(new BinaryTreeExclusionStrategy())
             .setPrettyPrinting()
@@ -42,11 +42,7 @@ public class PageController {
     // @RequestMapping(value = "/process-numbers", method = RequestMethod.POST)
     @PostMapping("/process-numbers")
     public String processNumbers(@ModelAttribute("values") String values, Model model) {
-        // The values sent by the HTML form are a plain string, parse it into a list of integers
-        List<Integer> parsedValues = Arrays.stream(values.trim().split("[, ]+"))
-                .map(Integer::parseInt).collect(Collectors.toList());
-
-        Tree newTree = treeService.createTreeFromValues(parsedValues);
+        Tree newTree = treeService.createTreeFromValues(values);
         String json = gson.toJson(newTree);
 
         model.addAttribute("json", json);

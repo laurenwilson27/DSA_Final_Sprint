@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Binary Tree App - Error</title>
+    <!-- Uses the Bahunya style sheet, see https://hakanalpay.com/bahunya/ -->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css"
+    />
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+<h1 th:text="${status}" class="red"></h1>
+<h4 th:text="${error}"></h4>
+<p>There was an error when attempting to process your request.</p>
+<pre th:text="${message}"></pre>
+<a href="/">Click here to return to the home page</a>
+</body>
+</html>

@@ -11,16 +11,19 @@ public class Tree {
     @SequenceGenerator(name = "tree_sequence", sequenceName = "tree_sequence", allocationSize = 1)
     @GeneratedValue(generator = "tree_sequence")
     private long id;
+    private final String input;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Node root;
 
-    public Tree() {
+    public Tree(String input) {
         this.root = null;
+        this.input = input;
     }
 
     public long getId() { return id; }
     public Node getRoot() { return root; }
+    public String getInput() { return input; }
 
     public void insert(int value) {
         root = insertRecursion(root, value);

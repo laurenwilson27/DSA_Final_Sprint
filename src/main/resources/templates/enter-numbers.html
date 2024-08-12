@@ -2,13 +2,23 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Enter Numbers</title>
+    <title>Binary Tree App - Create New Tree</title>
+    <!-- Uses the Bahunya style sheet, see https://hakanalpay.com/bahunya/ -->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css"
+    />
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
 </head>
 <body>
+    <h1>Create New Tree</h1>
+    <p>Enter a series of numbers to be inserted into a new binary tree.<br />
+    Each number can be separated by commas or whitespace.</p>
     <form th:action="@{/process-numbers}" method="post" th:object="${form}">
         <label for="valueInput">Values for Binary Tree: </label>
         <input id="valueInput" type="text" th:field="*{values}" />
-        <input type="submit" />
+        <input type="submit" value="Create Tree" />
     </form>
+    <a href="previous-trees">Click here to browse previously created trees</a>
 </body>
 </html>

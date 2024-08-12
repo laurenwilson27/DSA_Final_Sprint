@@ -1,0 +1,12 @@
+input {
+    width: 100%
+}
+
+h4 {
+    margin-top: 0px;
+}
+
+.red {
+    color: #d00;
+    text-decoration: underline;
+}

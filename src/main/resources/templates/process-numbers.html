@@ -2,11 +2,18 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
-    <title>Processed Tree</title>
+    <title>Binary Tree App - Result</title>
+    <!-- Uses the Bahunya style sheet, see https://hakanalpay.com/bahunya/ -->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css"
+    />
 </head>
 <body>
-    <h1>Processed Tree</h1>
-    <p>The resulting tree is as follows:</p>
+    <h1>Tree Created</h1>
+    <p th:inline="text">Binary Tree #[[${treeId}]] was successfully created. It is stuctured as follows:</p>
     <pre th:text="${json}"></pre>
+    <a href="enter-numbers">Click here to create an additional tree</a><br />
+    <a href="previous-trees">Click here to browse previously created trees</a>
 </body>
 </html>
