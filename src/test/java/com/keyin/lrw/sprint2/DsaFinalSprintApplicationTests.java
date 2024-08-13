@@ -2,6 +2,7 @@ package com.keyin.lrw.sprint2;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.keyin.lrw.sprint2.BinaryTree.Node;
 import com.keyin.lrw.sprint2.BinaryTree.Tree;
 import com.keyin.lrw.sprint2.gson.BinaryTreeExclusionStrategy;
 import org.junit.jupiter.api.BeforeEach;
@@ -82,6 +83,9 @@ class DsaFinalSprintApplicationTests {
 		String input = "3, 2, 1";
 
 		Tree testTree = new Tree(input);
+		testTree.insert(2);
+		testTree.insert(1);
+		testTree.insert(3);
 		testTree.setId(100L);
 
 		String mockJson = "";
