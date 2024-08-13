@@ -13,8 +13,18 @@
     <h1>Previous Trees</h1>
     <p>This page lists trees which have been previously created.<br />
     The input which was provided to create each tree are listed. Click on these values to view the resulting tree.</p>
-    <ol th:each="tree: ${trees}">
-        <li th:value="${tree.id}"><a th:href="'previous-trees/' + ${tree.id}" th:text="${tree.input}"></a></li>
-    </ol>
+    <table>
+        <thead>
+        <tr>
+            <td colspan="2">ID</td>
+            <td>Input</td>
+        </tr>
+        </thead>
+        <tr th:each="tree: ${trees}">
+            <td th:text="${tree.id}" colspan="2"></td>
+            <td th:value="${tree.id}" th:width="'100%'"><a th:href="'previous-trees/' + ${tree.id}" th:text="${tree.input}"></a></td>
+        </tr>
+    </table>
+    <a href="/enter-numbers">Click here to create a new tree</a><br />
 </body>
 </html>

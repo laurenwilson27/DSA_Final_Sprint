@@ -1,6 +1,8 @@
 package com.keyin.lrw.sprint2;
 
+import com.keyin.lrw.sprint2.BinaryTree.NodeRepository;
 import com.keyin.lrw.sprint2.BinaryTree.Tree;
+import com.keyin.lrw.sprint2.BinaryTree.TreeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +34,8 @@ public class TreeService {
 
         return newTree;
     }
+
+    public Tree getTree(long id ) { return treeRepository.findById(id).orElse(null); }
 
     public Iterable<Tree> getAllTrees() {
         return treeRepository.findAll();

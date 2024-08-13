@@ -56,4 +56,15 @@ public class PageController {
 
         return "previous-trees";
     }
+
+    @GetMapping("/previous-trees/{id}")
+    public String singleTree(@PathVariable long id, Model model) {
+        Tree tree = treeService.getTree(id);
+        String json = gson.toJson(tree);
+
+        model.addAttribute("tree", tree);
+        model.addAttribute("json", json);
+
+        return "single-tree";
+    }
 }

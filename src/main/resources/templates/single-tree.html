@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="'Binary Tree App - Tree #' + ${treeId}"></title>
+    <!-- Uses the Bahunya style sheet, see https://hakanalpay.com/bahunya/ -->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/kimeiga/bahunya/dist/bahunya.min.css"
+    />
+</head>
+<body>
+<h1 th:inline="text">Tree [[${tree.id}]]</h1>
+<p th:inline="text">Binary Tree #[[${tree.id}]] was generated with the string "[[${tree.input}]]". It is stuctured as follows:</p>
+<pre th:text="${json}"></pre>
+<a href="/enter-numbers">Click here to create a new tree</a><br />
+<a href="/previous-trees">Click here to return to the list of previously created trees</a>
+</body>
+</html>

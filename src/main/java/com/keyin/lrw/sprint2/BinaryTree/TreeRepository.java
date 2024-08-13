@@ -1,6 +1,5 @@
-package com.keyin.lrw.sprint2;
+package com.keyin.lrw.sprint2.BinaryTree;
 
-import com.keyin.lrw.sprint2.BinaryTree.Tree;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
