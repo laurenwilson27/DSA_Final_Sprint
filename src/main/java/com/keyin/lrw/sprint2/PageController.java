@@ -36,7 +36,7 @@ public class PageController {
     public String enterNumbers(Model model) {
         model.addAttribute("form", new EnterNumbersForm(null));
 
-        return "enter-numbers";
+        return "enterNumbers";
     }
 
     @PostMapping("/process-numbers")
@@ -47,14 +47,14 @@ public class PageController {
         model.addAttribute("json", json);
         model.addAttribute("treeId", newTree.getId());
 
-        return "process-numbers";
+        return "processNumbers";
     }
 
     @GetMapping("/previous-trees")
     public String previousTrees(Model model) {
         model.addAttribute("trees", treeService.getAllTrees());
 
-        return "previous-trees";
+        return "previousTrees";
     }
 
     @GetMapping("/previous-trees/{id}")
@@ -65,6 +65,6 @@ public class PageController {
         model.addAttribute("tree", tree);
         model.addAttribute("json", json);
 
-        return "single-tree";
+        return "singleTree";
     }
 }

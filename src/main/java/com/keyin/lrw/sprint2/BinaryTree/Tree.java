@@ -30,6 +30,9 @@ public class Tree {
     public Node getRoot() { return root; }
     public String getInput() { return input; }
 
+    public void setId(long id) { this.id = id; }
+    public void setRoot(Node root) { this.root = root; }
+
     public void insert(int value) {
         root = insertRecursion(root, value);
     }
