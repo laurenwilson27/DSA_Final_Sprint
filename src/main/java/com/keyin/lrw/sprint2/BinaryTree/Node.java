@@ -16,6 +16,12 @@ public class Node {
     @OneToOne(cascade = CascadeType.ALL)
     private Node right;
 
+    public Node() {
+        this.value = -1;
+        this.left = null;
+        this.right = null;
+    }
+
     public Node(int value) {
         this.value = value;
         this.left = null;

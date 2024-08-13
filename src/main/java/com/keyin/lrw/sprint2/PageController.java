@@ -39,7 +39,6 @@ public class PageController {
         return "enter-numbers";
     }
 
-    // @RequestMapping(value = "/process-numbers", method = RequestMethod.POST)
     @PostMapping("/process-numbers")
     public String processNumbers(@ModelAttribute("values") String values, Model model) {
         Tree newTree = treeService.createTreeFromValues(values);
@@ -49,5 +48,12 @@ public class PageController {
         model.addAttribute("treeId", newTree.getId());
 
         return "process-numbers";
+    }
+
+    @GetMapping("/previous-trees")
+    public String previousTrees(Model model) {
+        model.addAttribute("trees", treeService.getAllTrees());
+
+        return "previous-trees";
     }
 }

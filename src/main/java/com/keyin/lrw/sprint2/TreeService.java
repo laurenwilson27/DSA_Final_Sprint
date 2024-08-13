@@ -32,4 +32,8 @@ public class TreeService {
 
         return newTree;
     }
+
+    public Iterable<Tree> getAllTrees() {
+        return treeRepository.findAll();
+    }
 }

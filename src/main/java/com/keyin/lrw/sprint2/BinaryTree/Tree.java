@@ -16,6 +16,11 @@ public class Tree {
     @OneToOne(cascade = CascadeType.ALL)
     private Node root;
 
+    public Tree() {
+        this.root = null;
+        this.input = null;
+    }
+
     public Tree(String input) {
         this.root = null;
         this.input = input;
